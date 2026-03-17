@@ -9,7 +9,7 @@ function typeEffect() {
     charIndex++;
     setTimeout(typeEffect, speed);
   } else {
-    setTimeout(eraseEffect, 1500);
+    setTimeout(eraseEffect, 850);
   }
 }
 
