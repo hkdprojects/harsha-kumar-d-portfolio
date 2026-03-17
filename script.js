@@ -1,4 +1,4 @@
-const text = ["Full Stack Developer", "Node.js & React Developer", "Cybersecurity Enthusiast"];
+const text = ["Intermediate Java DSA skills", "Full-stack Node/React", "Aspiring cybersecurity professional","Basic Docker/Kubernetes knowledge"];
 let index = 0;
 let charIndex = 0;
 const speed = 100;
