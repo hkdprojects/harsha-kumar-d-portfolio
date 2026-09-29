@@ -1,8 +1,8 @@
-// Typing effect implementation
+// Typing Animation Effect
 const roles = [
+  "CyberShield Developer",
   "Java & Full-Stack Developer",
-  "Cybersecurity Enthusiast",
-  "Building Secure Web Systems",
+  "Cyber Security Enthusiast",
   "Problem Solver"
 ];
 
@@ -16,6 +16,8 @@ const holdTime = 1500;
 const typingElement = document.getElementById("typing");
 
 function handleTyping() {
+  if (!typingElement) return;
+
   const currentRole = roles[roleIndex];
 
   if (isDeleting) {
@@ -40,48 +42,95 @@ function handleTyping() {
   setTimeout(handleTyping, nextDelay);
 }
 
-document.addEventListener("DOMContentLoaded", handleTyping);
+// Mobile Menu Toggle Logic
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-// Interactive CLI Terminal logic
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
+}
+
+// CLI Terminal Logic with Mobile Touch Support
 const termInput = document.getElementById("terminal-input");
 const termOutput = document.getElementById("terminal-output");
+const termSubmitBtn = document.getElementById("terminal-submit-btn");
+const chipBtns = document.querySelectorAll(".chip-btn");
 
 const commands = {
-  help: "Available commands: <span class='term-cmd'>skills</span>, <span class='term-cmd'>projects</span>, <span class='term-cmd'>contact</span>, <span class='term-cmd'>clear</span>",
-  cybershield: "CyberShield: Intelligent threat detection system featuring automated DNS quarantine & real-time risk scoring.",
-  skills: "Skills: Java, JavaScript, C++, React, Node.js, MySQL, MongoDB, Web Security Scoring",
-  internship:"Generative AI @ Bharat Unnati(Lerners Byte) - N8N & propmt engineering",
+  help: "Available commands: <span class='term-cmd'>cybershield</span>, <span class='term-cmd'>experience</span>, <span class='term-cmd'>skills</span>, <span class='term-cmd'>projects</span>, <span class='term-cmd'>contact</span>, <span class='term-cmd'>clear</span>",
+  cybershield: "CyberShield: Intelligent threat detection system featuring DNS quarantine & ML threat scoring.",
+  experience: "Gen AI Intern @ Bharat Unnati (Learners Byte) - Built LLM workflows & prompt tools.",
+  skills: "Skills: Java, JavaScript, Python, React, Node.js, Network Security, Gen AI",
   projects: "Projects: CyberShield (Flagship), SecureSurf, Hunt, Quick Bill, Memory Game",
   contact: "Email: harshakumardhk2484@gmail.com | LinkedIn: linkedin.com/in/harshakumard | GitHub: github.com/hkdprojects"
 };
 
-termInput.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    const inputVal = termInput.value.trim().toLowerCase();
-    termInput.value = "";
+function executeCommand(inputVal) {
+  const cleanCmd = inputVal.trim().toLowerCase();
+  if (!cleanCmd || !termOutput) return;
 
-    if (!inputVal) return;
+  // Echo Command
+  const cmdLine = document.createElement("p");
+  cmdLine.className = "term-line";
+  cmdLine.innerHTML = `<span class="prompt">&gt;</span> ${cleanCmd}`;
+  termOutput.appendChild(cmdLine);
 
-    // Create command log
-    const cmdLine = document.createElement("p");
-    cmdLine.className = "term-line";
-    cmdLine.innerHTML = `<span class="prompt">&gt;</span> ${inputVal}`;
-    termOutput.appendChild(cmdLine);
+  // Output Response
+  const responseLine = document.createElement("p");
+  responseLine.className = "term-line";
 
-    // Process output
-    const responseLine = document.createElement("p");
-    responseLine.className = "term-line";
-
-    if (inputVal === "clear") {
-      termOutput.innerHTML = "";
-      return;
-    } else if (commands[inputVal]) {
-      responseLine.innerHTML = commands[inputVal];
-    } else {
-      responseLine.innerHTML = `Command not recognized: '${inputVal}'. Type <span class='term-cmd'>'help'</span> for options.`;
-    }
-
+  if (cleanCmd === "clear") {
+    termOutput.innerHTML = "";
+  } else if (commands[cleanCmd]) {
+    responseLine.innerHTML = commands[cleanCmd];
     termOutput.appendChild(responseLine);
-    termOutput.scrollTop = termOutput.scrollHeight;
+  } else {
+    responseLine.innerHTML = `Command not recognized: '${cleanCmd}'. Tap a chip above or type <span class='term-cmd'>'help'</span>.`;
+    termOutput.appendChild(responseLine);
   }
+
+  // Smooth scroll to bottom
+  termOutput.scrollTop = termOutput.scrollHeight;
+}
+
+if (termInput) {
+  // Keypress listener
+  termInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      executeCommand(termInput.value);
+      termInput.value = "";
+      termInput.blur();
+    }
+  });
+
+  // Auto-scroll screen to widget when keyboard opens on mobile
+  termInput.addEventListener("focus", function () {
+    setTimeout(() => {
+      termInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 300);
+  });
+}
+
+if (termSubmitBtn) {
+  termSubmitBtn.addEventListener("click", function () {
+    executeCommand(termInput.value);
+    termInput.value = "";
+  });
+}
+
+chipBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    const cmd = this.getAttribute("data-cmd");
+    executeCommand(cmd);
+  });
 });
+
+document.addEventListener("DOMContentLoaded", handleTyping);
