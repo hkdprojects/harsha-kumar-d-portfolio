@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harsha Kumar | Portfolio</title>
+    <title>Harsha Kumar D | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,152 +13,269 @@
     <!-- Navbar -->
     <header>
         <nav>
-            <h2 class="logo">Harsha Kumar</h2>
-            <ul>
+            <h2 class="logo">Harsha Kumar D</h2>
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <a href="assets/HarshaKumar_D_Resume.pdf" target="_blank" class="btn resume-btn">View Resume</a>
             </ul>
+            <a href="assets/Harsha Kumar_D_Resume.pdf" target="_blank" class="btn resume-btn">View Resume</a>
         </nav>
     </header>
 
     <!-- Hero -->
     <section id="home" class="hero">
-        <h1>Hi, I'm <span>Harsha Kumar</span></h1>
-        <h3><span id="typing"></span></h3>
-        <p>Java Full Stack | Security Enthusiast | Problem Solver</p>
-        <a href="#projects" class="btn">View Projects</a>
+        <div class="hero-status">
+            <span class="status-dot"></span> Available for Opportunities
+        </div>
+        <h1>Hi, I'm <span>Harsha Kumar D</span></h1>
+        <h3><span id="typing"></span><span class="cursor">|</span></h3>
+        <p class="hero-subtitle">Java Full Stack | Cybersecurity & Gen AI Enthusiast | Problem Solver</p>
+        
+        <div class="hero-actions">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
     </section>
 
     <!-- About -->
     <section id="about">
         <h2>About Me</h2>
-        <p>
-            I am a passionate Full Stack Developer skilled in React, Node.js, and Web Security.
-            I enjoy building secure and scalable applications and exploring cybersecurity tools.
-        </p>
+        <div class="about-card">
+            <p>
+                I am an engineering student specializing in Full Stack Development, Network Security, and Generative AI.
+                My work focuses on building threat monitoring systems, threat detection score engines, and scalable web applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <h3>Generative AI Intern</h3>
+                    <span class="company">Bharat Unnati (with Learners Byte)</span>
+                </div>
+                <p class="timeline-role">Gained hands-on experience in Generative AI concepts, prompt engineering, and implementing LLM-driven application workflows.</p>
+                <div class="project-tags">
+                    <span>Generative AI</span>
+                    <span>LLMs</span>
+                    <span>Prompt Engineering</span>
+                    <span>Python</span><br/>
+                    <a href="assets/certificates/Learners_Byte_Internship_Certificate.pdf" target="_blank" class="certificate-link">View Certificate</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
-        <h2>Skills</h2>
+        <h2>Skills & Technologies</h2>
         <div class="skills-grid">
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">React</div>
-            <div class="skill">Node.js</div>
-            <div class="skill">MongoDB</div>
-            <div class="skill">MySQL</div>
-            <div class="skill">Java</div>
-            <div class="skill">C++</div>
-            <div class="skill">Cybersecurity Basics</div>
+            <div class="skill-category">
+                <h3>Languages & Core</h3>
+                <div class="tags">
+                    <span class="skill">Java</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">SQL</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Frameworks & Web</h3>
+                <div class="tags">
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">Express.js</span>
+                    <span class="skill">HTML5 / CSS3</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Security & Intelligence</h3>
+                <div class="tags">
+                    <span class="skill">Threat Score Calculation</span>
+                    <span class="skill">DNS Quarantine</span>
+                    <span class="skill">Packet Analysis</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Databases & Tools</h3>
+                <div class="tags">
+                    <span class="skill">MySQL</span>
+                    <span class="skill">MongoDB</span>
+                    <span class="skill">Git & GitHub</span>
+                </div>
+            </div>
         </div>
     </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <!-- CyberShield (Flagship Project) -->
+            <div class="card project-card featured-project">
+                <div class="card-header">
+                    <h3>CyberShield</h3>
+                    <span class="badge badge-primary">Final Year Project</span>
+                </div>
+                <p>An intelligent threat detection and network isolation dashboard that analyzes traffic via rule/ML scoring engines and dynamically triggers DNS-based automated quarantine upon detecting threats.</p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Network Security</span>
+                    <span>DNS Quarantine</span>
+                    <span>Threat Detection</span>
+                </div>
+                <a href="https://github.com/hkdprojects/CyberShield-Smart-Network-Security-System" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3>SecureSurf</h3>
+                    <span class="badge">Security</span>
+                </div>
+                <p>Chrome extension that analyzes live browsing safety and calculates dynamic site risk scores.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Chrome Extension API</span>
+                </div>
+                <a href="https://github.com/hkdprojects/Hunt-DigitalFenceScore" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3>Hunt</h3>
+                    <span class="badge">Security Tool</span>
+                </div>
+                <p>Security score checker aggregating domain threat intelligence via WHOIS and VirusTotal APIs.</p>
+                <div class="project-tags">
+                    <span>Node.js</span>
+                    <span>REST APIs</span>
+                </div>
+                <a href="https://github.com/hkdprojects/Hunt-DigitalFenceScore" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3>Quick Bill</h3>
+                    <span class="badge">Full Stack</span>
+                </div>
+                <p>Invoice generation web application with dynamic totals and seamless export options.</p>
+                <div class="project-tags">
+                    <span>JavaScript</span>
+                    <span>Web Application</span>
+                </div>
+                <a href="https://github.com/hkdprojects/quickbill-InvoiceGenerator" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+            <div class="card project-card">
+                <div class="card-header">
+                    <h3>Memory Game</h3>
+                    <span class="badge">Interactive</span>
+                </div>
+                <p>Card-matching interactive game featuring responsive flip animations and match logic.</p>
+                <div class="project-tags">
+                    <span>HTML5</span>
+                    <span>CSS3 Animations</span>
+                    <span>JS</span>
+                </div>
+                <a href="https://github.com/hkdprojects/MemoryGame" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Certificates -->
     <section id="certificates">
         <h2>Certificates</h2>
-
         <div class="cert-grid">
             <div class="cert-card">
-                <h3> Introduction to Machine Learning</h3>
-                <p>IBM with Courcera</p>
+                <h3>Introduction to Machine Learning</h3>
+                <p class="issuer">IBM (via Coursera)</p>
                 <a href="assets/certificates/machineLearning.pdf" target="_blank">View Certificate</a>
             </div>
 
             <div class="cert-card">
                 <h3>Cryptography</h3>
-                <p>Courcera</p>
+                <p class="issuer">Coursera</p>
                 <a href="assets/certificates/Coursera_Cryptography.pdf" target="_blank">View Certificate</a>
             </div>
 
             <div class="cert-card">
                 <h3>Cybersecurity Basics</h3>
-                <p>Infosys Springboard</p>
+                <p class="issuer">Infosys Springboard</p>
                 <a href="assets/certificates/InfosysSpringBoardCyberSecurity.pdf" target="_blank">View Certificate</a>
             </div>
+
             <div class="cert-card">
                 <h3>Android Developer Course</h3>
-                <p>Edu Skills</p>
+                <p class="issuer">EduSkills</p>
                 <a href="assets/certificates/java.pdf" target="_blank">View Certificate</a>
             </div>
+
             <div class="cert-card">
-                <h3>AI-ML</h3>
-                <p>Edu Skills</p>
+                <h3>AI-ML Virtual Internship</h3>
+                <p class="issuer">EduSkills / AICTE</p>
                 <a href="assets/certificates/EduSkills_AICTE_GOOGLE AI-ML VIRTUAL INTERNSHIP.pdf" target="_blank">View Certificate</a>
             </div>
+
             <div class="cert-card">
-                <h3>AI in Cyber Security</h3>
-                <p>Edu Skills</p>
+                <h3>AI in Cybersecurity</h3>
+                <p class="issuer">EduSkills</p>
                 <a href="assets/certificates/AI in Cyber Security Virtual Internship.pdf" target="_blank">View Certificate</a>
             </div>
+
             <div class="cert-card">
                 <h3>Ethical Hacking</h3>
-                <p>NPTEL</p>
+                <p class="issuer">NPTEL</p>
                 <a href="assets/certificates/NPTEL_Ethical Hacking.pdf" target="_blank">View Certificate</a>
             </div>
         </div>
     </section>
 
-
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-
-            <div class="card">
-                <h3>SecureSurf</h3>
-                <p>Chrome extension to calculate website risk score.</p>
-                <a href="https://github.com/hkdprojects/Hunt-DigitalFenceScore">GitHub</a>
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>I am currently open to full-stack development, software engineering, and security analyst roles.</p>
+                
+                <div class="contact-methods">
+                    <div class="method">📧 <strong>Email:</strong> <a href="mailto:harshakumardhk2484@gmail.com">harshakumardhk2484@gmail.com</a></div>
+                    <div class="method">💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/harshakumard" target="_blank">linkedin.com/in/harshakumard</a></div>
+                    <div class="method">🐙 <strong>GitHub:</strong> <a href="https://github.com/hkdprojects" target="_blank">github.com/hkdprojects</a></div>
+                </div>
             </div>
 
-            <div class="card">
-                <h3>Hunt</h3>
-                <p>Website security score checker using APIs.</p>
-                <a href="https://github.com/hkdprojects/Hunt-DigitalFenceScore">GitHub</a>
+            <!-- Interactive CLI Terminal Widget -->
+            <div class="terminal-widget">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">guest@harsha-portfolio:~</span>
+                </div>
+                <div class="terminal-body" id="terminal-output">
+                    <p class="term-line">Type <span class="term-cmd">'help'</span> for available commands.</p>
+                </div>
+                <div class="terminal-input-row">
+                    <span class="prompt">&gt;</span>
+                    <input type="text" id="terminal-input" placeholder="Try 'projects', 'experience', or 'skills'..." />
+                </div>
             </div>
-
-            <div class="card">
-                <h3>Memory Game</h3>
-                <p>Simple Cards Matching Game Using HTML</p>
-                <a href="https://github.com/hkdprojects/MemoryGame">GitHub</a>
-            </div>
-
-            <div class="card">
-                <h3>Quick Bill</h3>
-                <p>Bill Generation web application.</p>
-                <a href="https://github.com/hkdprojects/quickbill-InvoiceGenerator">GitHub</a>
-            </div>
-
         </div>
     </section>
 
-    <!-- Contact -->
-    <!-- Contact -->
-<section id="contact">
-  <h2>Contact Me</h2>
-
-  <div class="contact-container">
-
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <h3>Get In Touch</h3>
-
-      <p>📞 Phone: <a href="tel:+916360387781">+91 6360387781</a></p>
-      <p>📧 Email: <a href="mailto:harshakumardhk2484@gmail.com">harshakumardhk2484@gmail.com</a></p>
-      <p>💼 LinkedIn: <a href="https://linkedin.com/in/harshakumard" target="_blank">linkedin.com/in/harshakumard</a></p>
-      <p>🐙 GitHub: <a href="https://github.com/hkdprojects" target="_blank">github.com/hkdprojects</a></p>
-
-    </div>
-  </div>
-</section>
-
-
     <footer>
-        <p> Harsha Kumar D</p>
+        <p>&copy; 2026 Harsha Kumar. Built with clean HTML, CSS & JavaScript.</p>
     </footer>
 
     <script src="script.js"></script>
